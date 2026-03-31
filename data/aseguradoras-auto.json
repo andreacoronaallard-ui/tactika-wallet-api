@@ -1,1 +1,50 @@
-
+{
+  "qualitas": {
+    "nombre": "Quálitas Compañía de Seguros",
+    "logo": "https://credencial.tactika.mx/assets/logo-qualitas.png",
+    "telefono_siniestros": "800 288 6700",
+    "telefonolink": "8002886700"
+  },
+  "ana": {
+    "nombre": "A.N.A. Compañía de Seguros",
+    "logo": "https://credencial.tactika.mx/assets/logo-ana.png",
+    "telefono_siniestros": "55 1117 7262",
+    "telefonolink": "5511177262"
+  },
+  "zurich": {
+    "nombre": "Zurich México",
+    "logo": "https://credencial.tactika.mx/assets/logo-zurich.png",
+    "telefono_siniestros": "800 288 6911",
+    "telefonolink": "8002886911"
+  },
+  "mapfre": {
+    "nombre": "MAPFRE México",
+    "logo": "https://credencial.tactika.mx/assets/logo-mapfre.png",
+    "telefono_siniestros": "800 062 7373",
+    "telefonolink": "8000627373"
+  },
+  "banorte": {
+    "nombre": "Seguros Banorte",
+    "logo": "https://credencial.tactika.mx/assets/logo-banorte.png",
+    "telefono_siniestros": "800 500 1500",
+    "telefonolink": "8005001500"
+  },
+  "gnp": {
+    "nombre": "Grupo Nacional Provincial",
+    "logo": "https://credencial.tactika.mx/assets/logo-gnp.png",
+    "telefono_siniestros": "55 5227 9000",
+    "telefonolink": "5552279000"
+  },
+  "allianz": {
+    "nombre": "Allianz México",
+    "logo": "https://credencial.tactika.mx/assets/logo-allianz.png",
+    "telefono_siniestros": "55 5201 3000",
+    "telefonolink": "5552013000"
+  },
+  "chubb": {
+    "nombre": "Chubb Seguros",
+    "logo": "https://credencial.tactika.mx/assets/logo-chubb.png",
+    "telefono_siniestros": "55 1253 3939",
+    "telefonolink": "5512533939"
+  }
+}
