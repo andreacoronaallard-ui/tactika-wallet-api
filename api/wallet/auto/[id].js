@@ -1,5 +1,5 @@
 
-import jwt from "jsonwebtoken";
+const jwt = require("jsonwebtoken");
 
 export default async function handler(req, res) {
   const { id } = req.query;
