@@ -1,1 +1,205 @@
+{
+   "1290599162": {
+    "id": "1290599162",
+    "shortcut": "1290599162",
+    "tipo": "auto",
+    "aseguradora_id": "qualitas",
+    "status": "activa",
 
+    "contratante": "Lucas Alexander Waller Moreno",
+    "asegurado": "Lucas Alexander Waller Moreno",
+
+    "poliza": "1290599162",
+
+    "vigencia_inicio": "2025-07-08",
+    "vigencia_fin": "2026-07-08",
+    "vigencia_texto": "08/07/2025<br>08/07/2026",
+
+    "vehiculo": "Nissan Versa Advance 2022",
+    "marca": "Nissan",
+    "submarca": "Versa Advance",
+    "anio": "2022",
+
+    "color": "Platino",
+    "serie": "3N1CN8AE2NL848935",
+
+    "pdf_url": "https://credencial.tactika.mx/assets/poliza/1290599162.pdf",
+
+    "web_url": "https://credencial.tactika.mx/auto/?c=1290599162",
+    "qr_value": "AUTO-1290599162"
+  },
+   "1290652234": {
+    "id": "1290652234",
+    "shortcut": "1290652234",
+    "tipo": "auto",
+    "aseguradora_id": "qualitas",
+    "status": "activa",
+
+    "contratante": "ANSEAD LEASING",
+    "asegurado": "ANSEAD LEASING",
+
+    "poliza": "1290652234",
+
+    "vigencia_inicio": "2026-03-17",
+    "vigencia_fin": "2027-03-17",
+    "vigencia_texto": "17/03/2026<br>17/03/2027",
+
+    "vehiculo": "Jeep Cherokee Overland 2026",
+    "marca": "Jeep",
+    "submarca": "Cherokee Overland",
+    "anio": "2026",
+
+    "color": "Blanco",
+    "serie": "3C4PJMC21TT221484",
+
+    "pdf_url": "https://credencial.tactika.mx/assets/poliza/1290652234.pdf",
+
+    "web_url": "https://credencial.tactika.mx/auto/?c=1290652234",
+    "qr_value": "AUTO-1290652234"
+  },
+     "1290616030": {
+    "id": "1290616030",
+    "shortcut": "1290616030",
+    "tipo": "auto",
+    "aseguradora_id": "qualitas",
+    "status": "activa",
+
+    "contratante": "ANSEAD LEASING",
+    "asegurado": "ANSEAD LEASING",
+
+    "poliza": "1290616030",
+
+    "vigencia_inicio": "2025-10-09",
+    "vigencia_fin": "2026-10-09",
+    "vigencia_texto": "09/10/2025<br>09/10/2026",
+
+    "vehiculo": "Nissan Xtrail EPower 2023",
+    "marca": "Nissan",
+    "submarca": "Xtrail EPower",
+    "anio": "2023",
+
+    "color": "Arena",
+    "serie": "JN8CT3MT2PW002368",
+
+    "pdf_url": "https://credencial.tactika.mx/assets/poliza/12906160304.pdf",
+
+    "web_url": "https://credencial.tactika.mx/auto/?c=1290616030",
+    "qr_value": "AUTO-1290616030"
+    },
+   "005329738": {
+    "id": "005329738",
+    "shortcut": "005329738",
+    "tipo": "auto",
+    "aseguradora_id": "ana",
+    "status": "activa",
+
+    "contratante": "ANSEAD LEASING",
+    "asegurado": "ANSEAD LEASING",
+
+    "poliza": "005329738",
+
+    "vigencia_inicio": "2025-07-10",
+    "vigencia_fin": "2026-07-10",
+    "vigencia_texto": "10/07/2025<br>10/07/2026",
+
+    "vehiculo": "Mazda CX70 MHEV 2025",
+    "marca": "Mazda",
+    "submarca": "CX70 MHEV",
+    "anio": "2025",
+
+    "color": "Negro",
+    "serie": "JM3KJPHD3S1113306",
+
+    "pdf_url": "https://credencial.tactika.mx/assets/poliza/005329738.pdf",
+
+    "web_url": "https://credencial.tactika.mx/auto/?c=005329738",
+    "qr_value": "AUTO-005329738"
+    },
+     "00000678595315": {
+    "id": "00000678595315",
+    "shortcut": "00000678595315",
+    "tipo": "auto",
+    "aseguradora_id": "gnp",
+    "status": "activa",
+
+    "contratante": "ANSEAD LEASING",
+    "asegurado": "ANSEAD LEASING",
+
+    "poliza": "00000678595315",
+
+    "vigencia_inicio": "2025-07-03",
+    "vigencia_fin": "2026-07-03",
+    "vigencia_texto": "03/07/2025<br>03/07/2026",
+
+    "vehiculo": "BYD Song Plus 2026",
+    "marca": "BYD",
+    "submarca": "Song Plus",
+    "anio": "2026",
+
+    "color": "Arena",
+    "serie": "LGXC74C44T0017521",
+
+    "pdf_url": "https://credencial.tactika.mx/assets/poliza/00000678595315.pdf",
+
+    "web_url": "https://credencial.tactika.mx/auto/?c=00000678595315",
+    "qr_value": "AUTO-00000678595315"
+    },
+             "005685899": {
+    "id": "005685899",
+    "shortcut": "005685899",
+    "tipo": "auto",
+    "aseguradora_id": "ana",
+    "status": "activa",
+
+    "contratante": "Gregorio Roitman Gonzalez",
+    "asegurado": "Gregorio Roitman Gonzalez",
+
+    "poliza": "005685899",
+
+    "vigencia_inicio": "2026-03-23",
+    "vigencia_fin": "2027-03-23",
+    "vigencia_texto": "23/03/2026<br>23/03/2027",
+
+    "vehiculo": "Fiat 500 Sport 2014",
+    "marca": "Fiat",
+    "submarca": "500 Sport",
+    "anio": "2014",
+
+    "color": " ",
+    "serie": "3C3CFFBR0ET275943",
+
+    "pdf_url": "https://credencial.tactika.mx/assets/poliza/005685899.pdf",
+
+    "web_url": "https://credencial.tactika.mx/auto/?c=005685899",
+    "qr_value": "AUTO-005685899"
+    },
+   "1290649638": {
+    "id": "1290649638",
+    "shortcut": "1290649638",
+    "tipo": "auto",
+    "aseguradora_id": "qualitas",
+    "status": "activa",
+
+    "contratante": "Gregorio Roitman Gonzalez",
+    "asegurado": "Gregorio Roitman Gonzalez",
+
+    "poliza": "1290649638",
+
+    "vigencia_inicio": "2026-03-05",
+    "vigencia_fin": "2027-03-05",
+    "vigencia_texto": "05/03/2026<br>05/03/2027",
+
+    "vehiculo": "Mercedes Benz C-200 CGI 2016",
+    "marca": "Mercedes Benz",
+    "submarca": "C-200 CGI",
+    "anio": "2016",
+
+    "color": " ",
+    "serie": "WDDWF4CB2GF329888",
+
+    "pdf_url": "https://credencial.tactika.mx/assets/poliza/1290649638.pdf",
+
+    "web_url": "https://credencial.tactika.mx/auto/?c=1290649638",
+    "qr_value": "AUTO-1290649638"
+      }
+}
