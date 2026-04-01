@@ -59,7 +59,7 @@ export default async function handler(req, res) {
 
           barcode: {
             type: "QR_CODE",
-            value: "AUTO-" + id
+            value: poliza.web_url || `https://credencial.tactika.mx/auto/?c=${id}`
           }
         }
       ]
