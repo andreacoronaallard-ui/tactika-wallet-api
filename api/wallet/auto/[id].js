@@ -74,10 +74,14 @@ export default async function handler(req, res) {
     {
       uri: "tel:" + aseguradora.telefonolink,
       description: "Reportar siniestro"
+   description: "Reportar siniestro"
+            }
+          ]
         }
-      ]
-    }
-  };
+      }
+    ]
+  }
+};
 
   const token = jwt.sign(payload, process.env.GOOGLE_PRIVATE_KEY, {
     algorithm: "RS256"
