@@ -68,7 +68,7 @@ module.exports = async function handler(req, res) {
 
             logo: {
               sourceUri: {
-                uri: "https://credencial.tactika.mx/assets/logo-tactikaverde.png"
+                uri: "https://credencial.tactika.mx/assets/logo-tactika.png"
               }
             },
 
