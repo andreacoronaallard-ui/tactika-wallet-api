@@ -61,6 +61,22 @@ export default async function handler(req, res) {
             type: "QR_CODE",
             value: poliza.web_url || `https://credencial.tactika.mx/auto/?c=${id}`
           }
+          linksModuleData: {
+  uris: [
+    {
+      uri: poliza.web_url || `https://credencial.tactika.mx/auto/?c=${id}`,
+      description: "Abrir credencial"
+    },
+    {
+      uri: poliza.pdf_url,
+      description: "Ver póliza"
+    },
+    {
+      uri: "tel:" + aseguradora.telefonolink,
+      description: "Reportar siniestro"
+    }
+  ]
+},
         }
       ]
     }
