@@ -41,14 +41,14 @@ module.exports = async function handler(req, res) {
       payload: {
         genericObjects: [
           {
-            id: `${process.env.ISSUER_ID}.${id}.v5`,
+            id: `${process.env.ISSUER_ID}.${id}.premium1`,
             classId: `${process.env.ISSUER_ID}.tactika_auto`,
             state: "ACTIVE",
 
             cardTitle: {
               defaultValue: {
                 language: "es",
-                value: poliza.contratante || poliza.asegurado || poliza.poliza
+                value: poliza.vehiculo || "Vehículo asegurado"
               }
             },
 
@@ -62,7 +62,7 @@ module.exports = async function handler(req, res) {
             subheader: {
               defaultValue: {
                 language: "es",
-                value: aseguradora.nombre
+                value: aseguradora.nombre || "Aseguradora"
               }
             },
 
@@ -78,20 +78,20 @@ module.exports = async function handler(req, res) {
               }
             },
 
-            hexBackgroundColor: "#4A5E4A",
+            hexBackgroundColor: "#2C3228",
 
             textModulesData: [
               {
-                header: "Vehículo",
-                body: poliza.vehiculo || ""
+                header: "Vigencia",
+                body: (poliza.vigencia_texto || "").replace(/<br>/g, " - ")
               },
               {
                 header: "Póliza",
                 body: poliza.poliza || id
               },
               {
-                header: "Vigencia",
-                body: (poliza.vigencia_texto || "").replace(/<br>/g, " - ")
+                header: "Contratante",
+                body: poliza.contratante || ""
               },
               {
                 header: "Serie",
