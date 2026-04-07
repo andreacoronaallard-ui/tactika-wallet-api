@@ -4,8 +4,21 @@ module.exports = async function handler(req, res) {
   try {
     const { id } = req.query;
 
-    const polizas = require("../../../data/auto.json");
-    const aseguradoras = require("../../../data/aseguradoras-auto.json");
+    const [polizasResp, aseguradorasResp] = await Promise.all([
+      fetch("https://credencial.tactika.mx/data/auto.json"),
+      fetch("https://credencial.tactika.mx/data/aseguradoras-auto.json")
+    ]);
+
+    if (!polizasResp.ok) {
+      return res.status(500).json({ error: "No se pudo leer auto.json del sitio" });
+    }
+
+    if (!aseguradorasResp.ok) {
+      return res.status(500).json({ error: "No se pudo leer aseguradoras-auto.json del sitio" });
+    }
+
+    const polizas = await polizasResp.json();
+    const aseguradoras = await aseguradorasResp.json();
 
     const poliza = polizas[id];
 
@@ -28,21 +41,21 @@ module.exports = async function handler(req, res) {
       payload: {
         genericObjects: [
           {
-            id: `${process.env.ISSUER_ID}.${id}.v2`,
+            id: `${process.env.ISSUER_ID}.${id}.v5`,
             classId: `${process.env.ISSUER_ID}.tactika_auto`,
             state: "ACTIVE",
 
             cardTitle: {
               defaultValue: {
                 language: "es",
-                value: poliza.contratante
+                value: poliza.contratante || poliza.asegurado || poliza.poliza
               }
             },
 
             header: {
               defaultValue: {
                 language: "es",
-                value: "Seguro Auto V2"
+                value: "Seguro Auto"
               }
             },
 
@@ -70,11 +83,11 @@ module.exports = async function handler(req, res) {
             textModulesData: [
               {
                 header: "Vehículo",
-                body: poliza.vehiculo
+                body: poliza.vehiculo || ""
               },
               {
                 header: "Póliza",
-                body: poliza.poliza
+                body: poliza.poliza || id
               },
               {
                 header: "Vigencia",
@@ -102,11 +115,11 @@ module.exports = async function handler(req, res) {
                   description: "Abrir credencial"
                 },
                 {
-                  uri: poliza.pdf_url,
+                  uri: poliza.pdf_url || poliza.pdf_externo_url || poliza.web_url || `https://credencial.tactika.mx/auto/?c=${id}`,
                   description: "Ver póliza"
                 },
                 {
-                  uri: "tel:" + aseguradora.telefonolink,
+                  uri: "tel:" + (aseguradora.telefonolink || ""),
                   description: "Reportar siniestro"
                 }
               ]
