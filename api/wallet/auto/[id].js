@@ -74,9 +74,6 @@ export default async function handler(req, res) {
     {
       uri: "tel:" + aseguradora.telefonolink,
       description: "Reportar siniestro"
-    }
-  ]
-},
         }
       ]
     }
