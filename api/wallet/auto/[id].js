@@ -42,7 +42,7 @@ module.exports = async function handler(req, res) {
             header: {
               defaultValue: {
                 language: "es",
-                value: "Seguro Auto"
+                value: "Seguro Auto V2"
               }
             },
 
