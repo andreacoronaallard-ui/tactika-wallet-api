@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   try {
     const { id } = req.query;
 
