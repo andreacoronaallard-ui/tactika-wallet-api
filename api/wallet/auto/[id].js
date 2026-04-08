@@ -102,7 +102,14 @@ module.exports = async function handler(req, res) {
                 body: poliza.color || ""
               }
             ],
-
+             validTimeInterval: {
+              start: {
+                date: poliza.vigencia_inicio
+              },
+              end: {
+               date: poliza.vigencia_fin
+              }
+             },
             barcode: {
               type: "QR_CODE",
               value: poliza.web_url || `https://credencial.tactika.mx/auto/?c=${id}`
