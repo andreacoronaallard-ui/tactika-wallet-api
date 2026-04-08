@@ -101,12 +101,16 @@ module.exports = async function handler(req, res) {
 
            validTimeInterval: {
             start: {
-            date: poliza.vigencia_inicio.split("T")[0]
+             date: poliza.vigencia_inicio
+              ? poliza.vigencia_inicio.split("T")[0]
+                : undefined
            },
            end: {
-            date: poliza.vigencia_fin.split("T")[0]
+            date: poliza.vigencia_fin
+             ? poliza.vigencia_fin.split("T")[0]
+               : undefined
              }
-          },
+           },
 
             barcode: {
               type: "QR_CODE",
