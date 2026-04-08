@@ -99,7 +99,6 @@ module.exports = async function handler(req, res) {
               }
             ],
 
-            // 🔥 ESTA ES LA PARTE CLAVE (YA CORRECTA)
             validTimeInterval: {
               start: {
                 date: poliza.vigencia_inicio
