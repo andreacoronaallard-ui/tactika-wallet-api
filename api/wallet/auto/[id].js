@@ -41,7 +41,7 @@ module.exports = async function handler(req, res) {
       payload: {
         genericObjects: [
           {
-            id: `${process.env.ISSUER_ID}.${id}.premium1`,
+            id: `${process.env.ISSUER_ID}.${id}.v8`,
             classId: `${process.env.ISSUER_ID}.tactika_auto`,
             state: "ACTIVE",
 
@@ -55,7 +55,7 @@ module.exports = async function handler(req, res) {
             header: {
               defaultValue: {
                 language: "es",
-                value: `Seguro Auto • ${aseguradora.nombre}`
+                value: `Seguro Auto • ${aseguradora.nombre || "Aseguradora"}`
               }
             },
 
@@ -68,7 +68,7 @@ module.exports = async function handler(req, res) {
 
             logo: {
               sourceUri: {
-                uri: "https://credencial.tactika.mx/assets/logo-tactika.png"
+                uri: "https://credencial.tactika.mx/assets/logo-tactikaverde.png"
               }
             },
 
@@ -78,13 +78,9 @@ module.exports = async function handler(req, res) {
               }
             },
 
-            hexBackgroundColor: "#2C3228",
+            hexBackgroundColor: "#1F2A23",
 
             textModulesData: [
-              {
-                header: "Vigencia",
-                body: (poliza.vigencia_texto || "").replace(/<br>/g, " - ")
-              },
               {
                 header: "Póliza",
                 body: poliza.poliza || id
@@ -102,14 +98,16 @@ module.exports = async function handler(req, res) {
                 body: poliza.color || ""
               }
             ],
-             validTimeInterval: {
+
+            validTimeInterval: {
               start: {
                 date: poliza.vigencia_inicio
               },
               end: {
-               date: poliza.vigencia_fin
+                date: poliza.vigencia_fin
               }
-             },
+            },
+
             barcode: {
               type: "QR_CODE",
               value: poliza.web_url || `https://credencial.tactika.mx/auto/?c=${id}`
