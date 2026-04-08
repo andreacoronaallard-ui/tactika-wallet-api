@@ -45,7 +45,7 @@ module.exports = async function handler(req, res) {
       payload: {
         genericObjects: [
           {
-            id: `${process.env.ISSUER_ID}.${id}.v18`,
+            id: `${process.env.ISSUER_ID}.${id}.v19`,
             classId: `${process.env.ISSUER_ID}.tactika_auto`,
             state: "ACTIVE",
 
@@ -67,12 +67,6 @@ module.exports = async function handler(req, res) {
               defaultValue: {
                 language: "es",
                 value: poliza.vigencia_texto || ""
-              }
-            },
-
-            logo: {
-              sourceUri: {
-                uri: "https://credencial.tactika.mx/assets/logo-tactikaverde.png"
               }
             },
 
