@@ -62,7 +62,7 @@ module.exports = async function handler(req, res) {
             subheader: {
               defaultValue: {
                 language: "es",
-                value: aseguradora.nombre || "Aseguradora"
+                value: (poliza.vigencia_texto || "").replace(/<br>/g, " - ")
               }
             },
 
