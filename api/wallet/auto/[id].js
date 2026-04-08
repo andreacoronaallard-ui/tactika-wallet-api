@@ -41,7 +41,7 @@ module.exports = async function handler(req, res) {
       payload: {
         genericObjects: [
           {
-            id: `${process.env.ISSUER_ID}.${id}.v15`,
+            id: `${process.env.ISSUER_ID}.${id}.v16`,
             classId: `${process.env.ISSUER_ID}.tactika_auto`,
             state: "ACTIVE",
 
