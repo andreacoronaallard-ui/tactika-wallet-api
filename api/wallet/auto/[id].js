@@ -41,7 +41,7 @@ module.exports = async function handler(req, res) {
       payload: {
         genericObjects: [
           {
-            id: `${process.env.ISSUER_ID}.${id}.v11`,
+            id: `${process.env.ISSUER_ID}.${id}.v12`,
             classId: `${process.env.ISSUER_ID}.tactika_auto`,
             state: "ACTIVE",
 
@@ -99,18 +99,14 @@ module.exports = async function handler(req, res) {
               }
             ],
 
-            validTimeInterval: {
-              start: {
-                dateTime: {
-                  date: poliza.vigencia_inicio
-                }
-              },
-              end: {
-                dateTime: {
-                 date: poliza.vigencia_fin
-                }
-              }
-            },
+           validTimeInterval: {
+            start: {
+            date: poliza.vigencia_inicio.split("T")[0]
+           },
+           end: {
+            date: poliza.vigencia_fin.split("T")[0]
+             }
+          },
 
             barcode: {
               type: "QR_CODE",
