@@ -41,7 +41,7 @@ module.exports = async function handler(req, res) {
       payload: {
         genericObjects: [
           {
-            id: `${process.env.ISSUER_ID}.${id}.v10`,
+            id: `${process.env.ISSUER_ID}.${id}.v11`,
             classId: `${process.env.ISSUER_ID}.tactika_auto`,
             state: "ACTIVE",
 
@@ -101,12 +101,12 @@ module.exports = async function handler(req, res) {
 
             validTimeInterval: {
               start: {
-                dateTime{
+                dateTime: {
                   date: poliza.vigencia_inicio
                 }
               },
               end: {
-                dateTime{
+                dateTime: {
                  date: poliza.vigencia_fin
                 }
               }
