@@ -45,7 +45,7 @@ module.exports = async function handler(req, res) {
       payload: {
         genericObjects: [
           {
-            id: `${process.env.ISSUER_ID}.${id}.v23`,
+            id: `${process.env.ISSUER_ID}.${id}.v24`,
             classId: `${process.env.ISSUER_ID}.tactika_auto`,
             state: "ACTIVE",
 
@@ -53,11 +53,6 @@ module.exports = async function handler(req, res) {
               defaultValue: {
                 language: "es",
                 value: poliza.vehiculo || "Vehículo asegurado"
-              }
-            },
-            logo: {
-              sourceUri: {
-                uri: "https://credencial.tactika.mx/logo-tactikatik.png"
               }
             },
             header: {
@@ -73,7 +68,17 @@ module.exports = async function handler(req, res) {
                 value: poliza.vigencia_texto || ""
               }
             },
-
+            logo: {
+              sourceUri: {
+                uri: "https://credencial.tactika.mx/logo-tactikatik.png"
+              }
+            },
+            contentDescription: {
+              defaultValue: {
+              language: "es",
+              value: "Tactika"
+              }
+             },
             heroImage: {
               sourceUri: {
                 uri: "https://credencial.tactika.mx/preview-tactika-auto.jpg"
