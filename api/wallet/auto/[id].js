@@ -41,7 +41,7 @@ module.exports = async function handler(req, res) {
       payload: {
         genericObjects: [
           {
-            id: `${process.env.ISSUER_ID}.${id}.v13`,
+            id: `${process.env.ISSUER_ID}.${id}.v15`,
             classId: `${process.env.ISSUER_ID}.tactika_auto`,
             state: "ACTIVE",
 
@@ -99,18 +99,15 @@ module.exports = async function handler(req, res) {
               }
             ],
 
-           validTimeInterval: {
-            start: {
-             date: poliza.vigencia_inicio
-              ? poliza.vigencia_inicio.split("T")[0]
-                : undefined
-           },
-           end: {
-            date: poliza.vigencia_fin
-             ? poliza.vigencia_fin.split("T")[0]
-               : undefined
-             }
-           },
+            // 🔥 ESTA ES LA PARTE CLAVE (YA CORRECTA)
+            validTimeInterval: {
+              start: {
+                date: poliza.vigencia_inicio
+              },
+              end: {
+                date: poliza.vigencia_fin
+              }
+            },
 
             barcode: {
               type: "QR_CODE",
@@ -124,7 +121,7 @@ module.exports = async function handler(req, res) {
                   description: "Abrir credencial"
                 },
                 {
-                  uri: poliza.pdf_url || poliza.pdf_externo_url || poliza.web_url || `https://credencial.tactika.mx/auto/?c=${id}`,
+                  uri: poliza.pdf_url || poliza.web_url,
                   description: "Ver póliza"
                 },
                 {
