@@ -39,10 +39,6 @@
 
     "poliza": "1290652234",
 
-    "vigencia_inicio": "2026-03-17",
-    "vigencia_fin": "2027-03-17",
-    "vigencia_texto": "17/03/2026<br>17/03/2027",
-
     "vehiculo": "Jeep Cherokee Overland 2026",
     "marca": "Jeep",
     "submarca": "Cherokee Overland",
@@ -50,7 +46,11 @@
 
     "color": "Blanco",
     "serie": "3C4PJMC21TT221484",
-
+      
+    "vigencia_inicio": "2026-03-17T00:00:00Z",
+    "vigencia_fin": "2027-03-17T23:59:59Z",
+    "vigencia_texto": "17/03/2026 - 17/03/2027",
+      
     "pdf_url": "https://credencial.tactika.mx/assets/poliza/1290652234.pdf",
 
     "web_url": "https://credencial.tactika.mx/auto/?c=1290652234"
