@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtoken");
+cconst jwt = require("jsonwebtoken");
 
 module.exports = async function handler(req, res) {
   try {
@@ -21,15 +21,19 @@ module.exports = async function handler(req, res) {
     const aseguradoras = await aseguradorasResp.json();
 
     const poliza = polizas[id];
-
     if (!poliza) {
       return res.status(404).json({ error: "Póliza no encontrada" });
     }
 
     const aseguradora = aseguradoras[poliza.aseguradora_id];
-
     if (!aseguradora) {
       return res.status(404).json({ error: "Aseguradora no encontrada" });
+    }
+
+    if (!poliza.vigencia_inicio || !poliza.vigencia_fin) {
+      return res.status(400).json({
+        error: "Faltan vigencia_inicio o vigencia_fin en auto.json"
+      });
     }
 
     const privateKey = process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n");
@@ -41,7 +45,7 @@ module.exports = async function handler(req, res) {
       payload: {
         genericObjects: [
           {
-            id: `${process.env.ISSUER_ID}.${id}.v16`,
+            id: `${process.env.ISSUER_ID}.${id}.v17`,
             classId: `${process.env.ISSUER_ID}.tactika_auto`,
             state: "ACTIVE",
 
@@ -62,7 +66,7 @@ module.exports = async function handler(req, res) {
             subheader: {
               defaultValue: {
                 language: "es",
-                value: (poliza.vigencia_texto || "").replace(/<br>/g, " - ")
+                value: poliza.vigencia_texto || ""
               }
             },
 
@@ -120,7 +124,7 @@ module.exports = async function handler(req, res) {
                   description: "Abrir credencial"
                 },
                 {
-                  uri: poliza.pdf_url || poliza.web_url,
+                  uri: poliza.pdf_url || poliza.web_url || `https://credencial.tactika.mx/auto/?c=${id}`,
                   description: "Ver póliza"
                 },
                 {
