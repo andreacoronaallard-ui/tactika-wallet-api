@@ -1,4 +1,4 @@
-cconst jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 
 module.exports = async function handler(req, res) {
   try {
@@ -45,7 +45,7 @@ module.exports = async function handler(req, res) {
       payload: {
         genericObjects: [
           {
-            id: `${process.env.ISSUER_ID}.${id}.v24`,
+            id: `${process.env.ISSUER_ID}.${id}.v25`,
             classId: `${process.env.ISSUER_ID}.tactika_auto`,
             state: "ACTIVE",
 
@@ -55,6 +55,7 @@ module.exports = async function handler(req, res) {
                 value: poliza.vehiculo || "Vehículo asegurado"
               }
             },
+
             header: {
               defaultValue: {
                 language: "es",
@@ -68,17 +69,19 @@ module.exports = async function handler(req, res) {
                 value: poliza.vigencia_texto || ""
               }
             },
+
             logo: {
               sourceUri: {
                 uri: "https://credencial.tactika.mx/logo-tactikatik.png"
+              },
+              contentDescription: {
+                defaultValue: {
+                  language: "es",
+                  value: "Tactika"
+                }
               }
             },
-            contentDescription: {
-              defaultValue: {
-              language: "es",
-              value: "Tactika"
-              }
-             },
+
             heroImage: {
               sourceUri: {
                 uri: "https://credencial.tactika.mx/preview-tactika-auto.jpg"
