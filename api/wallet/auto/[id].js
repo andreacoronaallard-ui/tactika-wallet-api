@@ -134,23 +134,23 @@ module.exports = async function handler(req, res) {
             linksModuleData: {
               uris: [
                 {
-                  uri: poliza.web_url || `https://credencial.tactika.mx/auto/?c=${id}`,
-                  description: "Abrir credencial",
-                  id: "link_credencial"
-                },
-                {
-                  uri: poliza.pdf_url || poliza.web_url || `https://credencial.tactika.mx/auto/?c=${id}`,
-                  description: "Ver póliza",
-                  id: "link_poliza"
-                },
-                {
                   uri: "tel:" + (aseguradora.telefonolink || ""),
-                  description: `Reportar siniestro · ${aseguradora.telefono_siniestros || ""}`,
+                  description: "Reportar siniestro · " + (aseguradora.telefono_siniestros || ""),
                   id: "link_siniestro"
                 },
                 {
+                  uri: poliza.web_url || `https://credencial.tactika.mx/auto/?c=${id}`,
+                  description: "Abrir credencial web",
+                  id: "link_credencial"
+                },
+                {
+                  uri: poliza.pdf_url || poliza.web_url,
+                  description: "Ver póliza completa (PDF)",
+                  id: "link_poliza"
+                },
+                {
                   uri: "https://wa.me/message/HWHNU3PT7TYXG1",
-                  description: "Contactar agente · Tactika",
+                  description: "Contactar agente · WhatsApp",
                   id: "link_agente"
                 }
               ]
