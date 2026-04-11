@@ -45,10 +45,12 @@ module.exports = async function handler(req, res) {
       payload: {
         genericObjects: [
           {
-            id: `${process.env.ISSUER_ID}.${id}.v27`,
+            id: `${process.env.ISSUER_ID}.${id}`,
             classId: `${process.env.ISSUER_ID}.tactika_auto`,
             state: "ACTIVE",
 
+            // ── Frente del pass ──
+            // cardTitle: aparece arriba del todo (nombre del vehículo)
             cardTitle: {
               defaultValue: {
                 language: "es",
@@ -56,13 +58,15 @@ module.exports = async function handler(req, res) {
               }
             },
 
+            // header: línea principal visible en la lista de passes
             header: {
               defaultValue: {
                 language: "es",
-                value: `Seguro Auto • ${aseguradora.nombre || "Aseguradora"}`
+                value: `Seguro Auto · ${aseguradora.nombre || "Aseguradora"}`
               }
             },
 
+            // subheader: vigencia debajo del header
             subheader: {
               defaultValue: {
                 language: "es",
@@ -70,9 +74,10 @@ module.exports = async function handler(req, res) {
               }
             },
 
+            // ── Logo (circular en Google Wallet) ──
             logo: {
               sourceUri: {
-                uri: "https://credencial.tactika.mx/logo-tactikatik.png"
+                uri: "https://credencial.tactika.mx/assets/logo-tactikatik.png"
               },
               contentDescription: {
                 defaultValue: {
@@ -82,33 +87,34 @@ module.exports = async function handler(req, res) {
               }
             },
 
-            heroImage: {
-              sourceUri: {
-                uri: "https://credencial.tactika.mx/preview-tactika-auto.jpg"
-              }
-            },
+            // ── Color de fondo (verde oscuro Tactika) ──
+            hexBackgroundColor: "#2C3228",
 
-            hexBackgroundColor: "#1F2A23",
-
+            // ── Campos de detalle (4 campos: Póliza, Contratante, Serie, Color) ──
             textModulesData: [
               {
+                id: "poliza",
                 header: "Póliza",
                 body: poliza.poliza || id
               },
               {
+                id: "contratante",
                 header: "Contratante",
                 body: poliza.contratante || ""
               },
               {
+                id: "serie",
                 header: "Serie",
                 body: poliza.serie || ""
               },
               {
+                id: "color",
                 header: "Color",
-                body: poliza.color || ""
+                body: (poliza.color || "").trim() || "—"
               }
             ],
 
+            // ── Vigencia (controla la expiración del pass) ──
             validTimeInterval: {
               start: {
                 date: poliza.vigencia_inicio
@@ -118,24 +124,34 @@ module.exports = async function handler(req, res) {
               }
             },
 
+            // ── QR code (abre la credencial web) ──
             barcode: {
               type: "QR_CODE",
               value: poliza.web_url || `https://credencial.tactika.mx/auto/?c=${id}`
             },
 
+            // ── Links (parte trasera del pass) ──
             linksModuleData: {
               uris: [
                 {
                   uri: poliza.web_url || `https://credencial.tactika.mx/auto/?c=${id}`,
-                  description: "Abrir credencial"
+                  description: "Abrir credencial",
+                  id: "link_credencial"
                 },
                 {
                   uri: poliza.pdf_url || poliza.web_url || `https://credencial.tactika.mx/auto/?c=${id}`,
-                  description: "Ver póliza"
+                  description: "Ver póliza",
+                  id: "link_poliza"
                 },
                 {
                   uri: "tel:" + (aseguradora.telefonolink || ""),
-                  description: "Reportar siniestro"
+                  description: `Reportar siniestro · ${aseguradora.telefono_siniestros || ""}`,
+                  id: "link_siniestro"
+                },
+                {
+                  uri: "https://wa.me/message/HWHNU3PT7TYXG1",
+                  description: "Contactar agente · Tactika",
+                  id: "link_agente"
                 }
               ]
             }
